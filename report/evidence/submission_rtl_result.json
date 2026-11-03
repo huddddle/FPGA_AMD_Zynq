@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "packets": 97,
+  "runs": [
+    {
+      "command": [
+        "verilator",
+        "--cc",
+        "--exe",
+        "--build",
+        "--assert",
+        "-Wno-fatal",
+        "-j",
+        "2",
+        "--top-module",
+        "y26_axis_continuous30_top",
+        "--prefix",
+        "Vaxi_dut",
+        "--Mdir",
+        "/mnt/d/CodexCache/FPGA_AMD_Zynq_submission_2026-11-03_232451/rtl_replay/obj",
+        "-o",
+        "sim",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_block2230.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_conv11.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_deep.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_frame.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_graph.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_hotspot56.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_middle.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_resident.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_conv_tile.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_graph_bridge.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_mac_array.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_requantize.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_resident_link.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_resident_memory.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_rgb_rows.sv",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_continuous30_top.v",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_resident_top.v",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/src/rtl/y26_axis_block2230_top.v",
+        "/mnt/c/Users/huddd/Desktop/FPGA\u8bbe\u8ba1\u5927\u8d5b\u5168\u90e8\u8d44\u6599/FPGA_AMD_Zynq/sim/tb/axis_driver.cpp"
+      ],
+      "exit_code": 0,
+      "seconds": 38.23828885900001
+    },
+    {
+      "command": [
+        "/mnt/d/CodexCache/FPGA_AMD_Zynq_submission_2026-11-03_232451/rtl_replay/obj/sim",
+        "/mnt/d/CodexCache/FPGA_AMD_Zynq_submission_2026-11-03_232451/rtl_replay/vectors.txt",
+        "/mnt/d/CodexCache/FPGA_AMD_Zynq_submission_2026-11-03_232451/rtl_replay/responses.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 152.29858616899998
+    }
+  ],
+  "board_test": false
+}

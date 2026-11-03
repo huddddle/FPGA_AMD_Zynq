@@ -1,0 +1,7 @@
+[
+  {"class_id":0,"class_name":"ca_shang","confidence":0.874765933,"xyxy":[173.966599,151.396301,229.257736,200.397232],"candidate_index":1833},
+  {"class_id":0,"class_name":"ca_shang","confidence":0.829145014,"xyxy":[132.168182,165.274628,150.752106,229.792297],"candidate_index":1058},
+  {"class_id":0,"class_name":"ca_shang","confidence":0.823754966,"xyxy":[163.291504,91.4080963,213.312897,133.30542],"candidate_index":1752},
+  {"class_id":0,"class_name":"ca_shang","confidence":0.785804391,"xyxy":[126.278572,63.5299149,145.019821,129.55098],"candidate_index":498},
+  {"class_id":0,"class_name":"ca_shang","confidence":0.759742022,"xyxy":[65.1242752,148.509781,131.433563,164.07843],"candidate_index":813}
+]

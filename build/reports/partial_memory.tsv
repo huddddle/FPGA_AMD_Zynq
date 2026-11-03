@@ -1,0 +1,17 @@
+NAME	READ_WIDTH_A	READ_WIDTH_B	WRITE_WIDTH_A	WRITE_WIDTH_B
+sys_i/conv/inst/engine/compute/core/output_bank[0].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[10].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[11].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[12].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[13].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[14].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[15].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[1].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[2].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[3].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[4].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[5].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[6].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[7].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[8].partial_reg	36	36	36	36
+sys_i/conv/inst/engine/compute/core/output_bank[9].partial_reg	36	36	36	36

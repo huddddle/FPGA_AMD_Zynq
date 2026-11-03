@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checks": {
+    "yolo26_detect": true,
+    "server.py": true,
+    "Zynq7020.sh": true,
+    "model.ncnn.param": true,
+    "model.ncnn.bin": true,
+    "label_list": true,
+    "pl30/prefix.load": true,
+    "pl30/hotspot.load": true,
+    "pl30/graph.load": true,
+    "pl30/middle.packet": true,
+    "pl30/parameters.y11": true,
+    "pl30/parameters.y21": true,
+    "pl30/deep.packet": true,
+    "pl30/bit.sha256": true,
+    "pl30/start.packet": true,
+    "pl30/read.packet": true,
+    "pl30/output.scale": true,
+    "pl30/y26_dma_client.ko": true,
+    "pl30/batch0.packet": true,
+    "pl30/batch1.packet": true,
+    "pl30/batch2.packet": true,
+    "pl30/batch3.packet": true,
+    "pl30/batch4.packet": true,
+    "pl30/batch5.packet": true,
+    "pl30/batch6.packet": true,
+    "pl30/batch7.packet": true
+  },
+  "network_sha256_unchanged": "875087f0e5634ec0f8937265dda2e565546d349073ee3b0d92686ca2b4dd9b00",
+  "labels_sha256_unchanged": "966d0b728b9cdec0a8133e2bb560d168f542b7c957208c031e9285c87e2c0da5"
+}

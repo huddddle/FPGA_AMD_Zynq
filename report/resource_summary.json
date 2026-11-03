@@ -1,0 +1,18 @@
+{
+  "lut": 34788,
+  "ff": 22964,
+  "ramb36": 131,
+  "ramb18": 3,
+  "dsp": 92,
+  "bram36_equivalent": 132.5,
+  "device_lut": 53200,
+  "device_ff": 106400,
+  "device_bram36": 140,
+  "device_dsp": 220,
+  "clock_mhz": 100,
+  "source": "build/reports/utilization.rpt",
+  "lut_percent": 65.39097744360902,
+  "ff_percent": 21.582706766917294,
+  "bram_percent": 94.64285714285715,
+  "dsp_percent": 41.81818181818181
+}

@@ -1,0 +1,20 @@
+E
+======================================================================
+ERROR: test_continuous30 (unittest.loader._FailedTest.test_continuous30)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_continuous30
+Traceback (most recent call last):
+  File "C:\Users\huddd\Desktop\Yolo26n\env\Lib\unittest\loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\huddd\Desktop\Yolo26n\env\Lib\unittest\loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\conv_accel\tests\test_continuous30.py", line 3, in <module>
+    from continuous30 import capture6, source6, lane_address, audit
+ModuleNotFoundError: No module named 'continuous30'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

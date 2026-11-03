@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "files": 45,
+  "bytes": 16425786,
+  "bit_sha256": "d4c8b7f9426ecddc3c4d344bd0920a61a1acc7d9a99d48fbf275665d2f463a2e",
+  "unchanged_ps_dma_reset_interconnect_parameters": true,
+  "ps7_initialization_identical": {
+    "ps7_init.c": true,
+    "ps7_init.h": true,
+    "ps7_init.html": true,
+    "ps7_init.tcl": true,
+    "ps7_init_gpl.c": true,
+    "ps7_init_gpl.h": true
+  },
+  "source_matches_verified_rtl": true,
+  "model_quantization_unchanged": true
+}

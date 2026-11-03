@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "backend": "ncnn_pl30",
+  "accelerated_conv_nodes": 31,
+  "bit_sha256": "d4c8b7f9426ecddc3c4d344bd0920a61a1acc7d9a99d48fbf275665d2f463a2e",
+  "dt_model": "Embedfire Zynq7020 continuous0to30 shared INT8 fusion",
+  "model_and_quantization_unchanged": true,
+  "default_sd_boot_unchanged": true,
+  "feature_ddr_reimports": 0,
+  "full_dataset_map_evaluated": false,
+  "service_kept_running": true,
+  "tag": "codex/service-conv0-30-verified-20261103",
+  "implementation_commit": "e8ec535b93d56757b84433fc2ac136464243a105",
+  "history_merge_commit": "7f6adbb35c6d0779addf2a0448f30ebd114dc717"
+}

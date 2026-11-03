@@ -1,0 +1,20 @@
+[
+  "y26_axis_block2230.sv",
+  "y26_axis_conv11.sv",
+  "y26_axis_deep.sv",
+  "y26_axis_frame.sv",
+  "y26_axis_graph.sv",
+  "y26_axis_hotspot56.sv",
+  "y26_axis_middle.sv",
+  "y26_axis_resident.sv",
+  "y26_conv_tile.sv",
+  "y26_graph_bridge.sv",
+  "y26_mac_array.sv",
+  "y26_requantize.sv",
+  "y26_resident_link.sv",
+  "y26_resident_memory.sv",
+  "y26_rgb_rows.sv",
+  "y26_axis_continuous30_top.v",
+  "y26_axis_resident_top.v",
+  "y26_axis_block2230_top.v"
+]

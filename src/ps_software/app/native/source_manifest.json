@@ -1,0 +1,30 @@
+{
+  "source_date": "2026-10-27",
+  "relationship": "C++ sources are recovered from the existing desktop project; the board contains the compiled executable, not these source files.",
+  "files": {
+    "yolo26_detect.cpp": {
+      "origin": "existing desktop ARM32 source; text normalized to LF",
+      "source_sha256": "dff73e0d2479408deee336cd4589f120b23cd80f116f68484a788eb814cd3941",
+      "repository_sha256": "dff73e0d2479408deee336cd4589f120b23cd80f116f68484a788eb814cd3941"
+    },
+    "detection.hpp": {
+      "origin": "existing desktop ARM32 source; text normalized to LF",
+      "source_sha256": "468abce7aca4072f4028338d26c0a63c1ebc2fd6adee0b839bc4b432f8d558d9",
+      "repository_sha256": "468abce7aca4072f4028338d26c0a63c1ebc2fd6adee0b839bc4b432f8d558d9"
+    },
+    "tests/detection_custom_test.cpp": {
+      "origin": "existing desktop ARM32 source; text normalized to LF",
+      "source_sha256": "e4f5c9cb80792a65fdae7cf3ba8b39febda4d55d0611d414c0d33ef799cb2f12",
+      "repository_sha256": "e4f5c9cb80792a65fdae7cf3ba8b39febda4d55d0611d414c0d33ef799cb2f12"
+    }
+  },
+  "ncnn": {
+    "repository": "https://github.com/Tencent/ncnn",
+    "tag": "20260526",
+    "commit": "e54f7b1f88434e1d844ea0551b880a1cfb079ce1",
+    "vulkan": false,
+    "openmp": false
+  },
+  "stb_headers": "Copied from the fixed ncnn commit; original content and license notices retained, repository text normalized to LF.",
+  "production_binary": "The executable in ../yolo26_detect is the exact board snapshot; a rebuild is not claimed bit-for-bit identical."
+}

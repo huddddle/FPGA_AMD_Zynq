@@ -1,0 +1,317 @@
+{
+  "device_tree": "continuous30.dtb",
+  "pass": true,
+  "checks": [
+    {
+      "name": "SD root filesystem",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "serial console",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "bitstream identity metadata",
+      "pass": true,
+      "actual": "d4c8b7f9426ecddc3c4d344bd0920a61a1acc7d9a99d48fbf275665d2f463a2e",
+      "expected": "d4c8b7f9426ecddc3c4d344bd0920a61a1acc7d9a99d48fbf275665d2f463a2e"
+    },
+    {
+      "name": "old PL I2C alias removed",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "old PL UART alias removed",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "DDR address range",
+      "pass": true,
+      "actual": [
+        0,
+        1073741824
+      ],
+      "expected": [
+        0,
+        1073741824
+      ]
+    },
+    {
+      "name": "serial@e0000000 enabled",
+      "pass": true,
+      "actual": "okay",
+      "expected": "okay"
+    },
+    {
+      "name": "ethernet@e000b000 enabled",
+      "pass": true,
+      "actual": "okay",
+      "expected": "okay"
+    },
+    {
+      "name": "mmc@e0100000 enabled",
+      "pass": true,
+      "actual": "okay",
+      "expected": "okay"
+    },
+    {
+      "name": "i2c@e0004000 disabled in lab",
+      "pass": true,
+      "actual": "disabled",
+      "expected": "disabled"
+    },
+    {
+      "name": "i2c@e0005000 disabled in lab",
+      "pass": true,
+      "actual": "disabled",
+      "expected": "disabled"
+    },
+    {
+      "name": "serial@e0001000 disabled in lab",
+      "pass": true,
+      "actual": "disabled",
+      "expected": "disabled"
+    },
+    {
+      "name": "can@e0008000 disabled in lab",
+      "pass": true,
+      "actual": "disabled",
+      "expected": "disabled"
+    },
+    {
+      "name": "ethernet@e000c000 disabled in lab",
+      "pass": true,
+      "actual": "disabled",
+      "expected": "disabled"
+    },
+    {
+      "name": "usb@e0002000 disabled in lab",
+      "pass": true,
+      "actual": "disabled",
+      "expected": "disabled"
+    },
+    {
+      "name": "AXI DMA control window",
+      "pass": true,
+      "actual": [
+        1077936128,
+        65536
+      ],
+      "expected": [
+        1077936128,
+        65536
+      ]
+    },
+    {
+      "name": "DMA address width",
+      "pass": true,
+      "actual": [
+        32
+      ],
+      "expected": [
+        32
+      ]
+    },
+    {
+      "name": "DMA length width",
+      "pass": true,
+      "actual": [
+        23
+      ],
+      "expected": [
+        23
+      ]
+    },
+    {
+      "name": "DMA interrupts",
+      "pass": true,
+      "actual": [
+        0,
+        29,
+        4,
+        0,
+        30,
+        4
+      ],
+      "expected": [
+        0,
+        29,
+        4,
+        0,
+        30,
+        4
+      ]
+    },
+    {
+      "name": "GIC reference",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "FCLK0 references",
+      "pass": true,
+      "actual": [
+        1,
+        15,
+        1,
+        15,
+        1,
+        15
+      ],
+      "expected": [
+        1,
+        15,
+        1,
+        15,
+        1,
+        15
+      ]
+    },
+    {
+      "name": "FCLK enable mask",
+      "pass": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "noncoherent HP0",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "simple mode",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "dma-channel@40400000 width",
+      "pass": true,
+      "actual": [
+        32
+      ],
+      "expected": [
+        32
+      ]
+    },
+    {
+      "name": "dma-channel@40400000 IRQ",
+      "pass": true,
+      "actual": [
+        0,
+        29,
+        4
+      ],
+      "expected": [
+        0,
+        29,
+        4
+      ]
+    },
+    {
+      "name": "dma-channel@40400000 no DRE",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "dma-channel@40400030 width",
+      "pass": true,
+      "actual": [
+        32
+      ],
+      "expected": [
+        32
+      ]
+    },
+    {
+      "name": "dma-channel@40400030 IRQ",
+      "pass": true,
+      "actual": [
+        0,
+        30,
+        4
+      ],
+      "expected": [
+        0,
+        30,
+        4
+      ]
+    },
+    {
+      "name": "dma-channel@40400030 no DRE",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "client TX/RX channels",
+      "pass": true,
+      "actual": [
+        21,
+        0,
+        21,
+        1
+      ],
+      "expected": [
+        21,
+        0,
+        21,
+        1
+      ]
+    },
+    {
+      "name": "client names",
+      "pass": true,
+      "actual": "tx rx",
+      "expected": "tx rx"
+    },
+    {
+      "name": "GEM0 PHY address",
+      "pass": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ]
+    },
+    {
+      "name": "GEM0 PHY reference",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "old PL devices removed",
+      "pass": true,
+      "actual": [
+        "dma@40400000"
+      ],
+      "expected": [
+        "dma@40400000"
+      ]
+    },
+    {
+      "name": "matched model identifier",
+      "actual": "Embedfire Zynq7020 continuous0to30 shared INT8 fusion",
+      "expected": "Embedfire Zynq7020 continuous0to30 shared INT8 fusion",
+      "pass": true
+    }
+  ],
+  "compiler_stderr": "<stdout>: Warning (unit_address_vs_reg): Node /amba_pl/dma@40400000/dma-channel@40400000 has a unit name, but no reg property\n<stdout>: Warning (unit_address_vs_reg): Node /amba_pl/dma@40400000/dma-channel@40400030 has a unit name, but no reg property\n<stdout>: Warning (unit_address_vs_reg): Node /memory has a reg or ranges property, but no unit name\n"
+}

@@ -1,0 +1,12 @@
+指标名称,类别,数值,单位,测量条件,测试次数/时长,证据文件
+cpu_fp32,前向,1240.162971,ms,同bit/boot/固定RGB320/CPU1/单线程/packing/lightmode,7记录，每记录前2预热,evidence/results.json
+pl21_control,前向,866.078449,ms,同bit/boot/固定RGB320/CPU1/单线程/packing/lightmode,7记录，每记录前2预热,evidence/results.json
+pl30,前向,869.309115,ms,同bit/boot/固定RGB320/CPU1/单线程/packing/lightmode,7记录，每记录前2预热,evidence/results.json
+lut,硬件,34788,个,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/utilization.rpt
+ff,硬件,22964,个,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/utilization.rpt
+bram36_equivalent,硬件,132.5,块,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/utilization.rpt
+dsp,硬件,92,个,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/utilization.rpt
+clock,硬件,100,MHz,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/utilization.rpt
+wns,硬件,0.008,ns,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/result.json
+whs,硬件,0.036,ns,Vivado2022.2 xc7z020clg400-2 完整postroute,一次已验实现,../build/reports/result.json
+dataset_map,范围,未评估,,不能以固定图数值一致代替,,design_report.md

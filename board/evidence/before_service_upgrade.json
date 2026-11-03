@@ -1,0 +1,40 @@
+{
+  "boot_id": "fae2eb4e-bc03-4727-9472-32cb81ff20dc",
+  "dt_model": "Embedfire Zynq7020 continuous0to30 shared INT8 fusion",
+  "bit_sha256": "d4c8b7f9426ecddc3c4d344bd0920a61a1acc7d9a99d48fbf275665d2f463a2e",
+  "irqs": [
+    {
+      "irq": 53,
+      "cpu_counts": [
+        1782,
+        0
+      ],
+      "gic": 61
+    },
+    {
+      "irq": 54,
+      "cpu_counts": [
+        1782,
+        0
+      ],
+      "gic": 62
+    }
+  ],
+  "cpu_khz": "666667",
+  "dma_device": true,
+  "client_loaded": true,
+  "meminfo": {
+    "MemAvailable": "984120 kB",
+    "CmaTotal": "262144 kB",
+    "CmaFree": "214144 kB"
+  },
+  "hashes": {
+    "/boot/BOOT.BIN": "f0e985e6ce91c8205ec30f0d66c19273cae0e92def9d41dedc0dbb5812efed75",
+    "/boot/boot.scr": "7702e40c863bb4d73b561ad9dd112537fd4560515286e9a3f5aebb133a6383f8",
+    "/boot/uEnv.txt": "e211c7f8b8034c02c9035d71c05237607f09efeec272ad9d9c774788431c53c2",
+    "/home/root/Zynq7020_deploy/model.ncnn.param": "424b3eef2f1b90d8b9899361462d636082b7809eb186e0782c2051e77f990c4e",
+    "/home/root/Zynq7020_deploy/model.ncnn.bin": "2e293e8f492e50f4695c8d0d338f4dbccc62527570db9debaa7cd6cdb8dabf74",
+    "/home/root/Zynq7020_deploy/Zynq7020.sh": "c4815f2affbe24520d9467266bbe1c9c747514c8756b9c0e5e794ff91a9e7c94",
+    "/home/root/Zynq7020_deploy/server.py": "977daddcae99e40b39b17c0cfba31178743866814f0e9fe001d8c65e005d04b2"
+  }
+}

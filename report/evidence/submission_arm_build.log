@@ -1,0 +1,9 @@
+In file included from d:\vivado2018_3\sdk\2018.3\gnu\aarch32\nt\gcc-arm-linux-gnueabi\arm-linux-gnueabihf\include\c++\7.3.1\map:60:0,
+                 from D:\CodexCache\FPGA_AMD_Zynq_submission_2026-11-03_232451\arm_build\source\conv_accel\native\two_layer.cpp:11:
+d:\vivado2018_3\sdk\2018.3\gnu\aarch32\nt\gcc-arm-linux-gnueabi\arm-linux-gnueabihf\include\c++\7.3.1\bits\stl_tree.h: In member function 'std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*> std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_M_get_insert_hint_unique_pos(std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::const_iterator, const key_type&) [with _Key = int; _Val = std::pair<const int, double>; _KeyOfValue = std::_Select1st<std::pair<const int, double> >; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, double> >]':
+d:\vivado2018_3\sdk\2018.3\gnu\aarch32\nt\gcc-arm-linux-gnueabi\arm-linux-gnueabihf\include\c++\7.3.1\bits\stl_tree.h:2130:5: note: parameter passing for argument of type 'std::_Rb_tree<int, std::pair<const int, double>, std::_Select1st<std::pair<const int, double> >, std::less<int>, std::allocator<std::pair<const int, double> > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const int, double> >}' changed in GCC 7.1
+     _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Built D:\CodexCache\FPGA_AMD_Zynq_submission_2026-11-03_232451\arm_build\yolo26_detect
+Built D:\CodexCache\FPGA_AMD_Zynq_submission_2026-11-03_232451\arm_build\detection_custom_test
+ARM binaries built; execute with a compatible target runtime or QEMU before deployment.

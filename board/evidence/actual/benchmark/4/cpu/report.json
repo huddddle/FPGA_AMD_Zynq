@@ -1,0 +1,1 @@
+{"backend":"cpu","warmup":2,"runs":1,"forward_ms":1238.776745,"samples_ms":[1238.776745]}

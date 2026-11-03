@@ -1,0 +1,47 @@
+EEEE
+======================================================================
+ERROR: test_command_uses_new_package (test_pl30_backend.PL30BackendTest.test_command_uses_new_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\tests\test_pl30_backend.py", line 21, in test_command_uses_new_package
+    self.assertEqual(cmd[cmd.index('--parameters')+1],str(server.ROOT/'pl30'))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: '--parameters' is not in list
+
+======================================================================
+ERROR: test_continuous_identity_and_final_skips (test_pl30_backend.PL30BackendTest.test_continuous_identity_and_final_skips)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\tests\test_pl30_backend.py", line 10, in test_continuous_identity_and_final_skips
+    d=server.backend_description('pl30');self.assertEqual(d['backend'],'ncnn_pl30')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\server.py", line 31, in backend_description
+    raise ValueError("Unsupported backend")
+ValueError: Unsupported backend
+
+======================================================================
+ERROR: test_report_must_prove_no_feature_reimport (test_pl30_backend.PL30BackendTest.test_report_must_prove_no_feature_reimport)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\tests\test_pl30_backend.py", line 16, in test_report_must_prove_no_feature_reimport
+    server.validate_backend_report(d,'pl30')
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\server.py", line 40, in validate_backend_report
+    raise ValueError("Inference backend mismatch; refusing to label CPU output as PL")
+ValueError: Inference backend mismatch; refusing to label CPU output as PL
+
+======================================================================
+ERROR: test_stage_output_explains_on_chip_moves (test_pl30_backend.PL30BackendTest.test_stage_output_explains_on_chip_moves)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\tests\test_pl30_backend.py", line 24, in test_stage_output_explains_on_chip_moves
+    text='\n'.join(server.format_stage_lines('test',r));self.assertIn('0～30',text);self.assertIn('片上',text);self.assertIn('余网',text)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\huddd\Desktop\FPGA设计大赛全部资料\FPGA-AMD-Zynq\sw\petalinux\app\server.py", line 61, in format_stage_lines
+    p = report["prefix_profile"]
+        ~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'prefix_profile'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.010s
+
+FAILED (errors=4)

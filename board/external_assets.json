@@ -1,0 +1,10 @@
+{
+  "zImage": {
+    "sha256": "311d2c1fa8448724df9d14c6493d08ef96e825b60e785a087fc81c52c128d98f",
+    "bytes": 4503288,
+    "kernel_release": "5.15.0-xilinx",
+    "provider": "Embedfire AC7020 vendor Linux image",
+    "not_redistributed_in_this_repository": true,
+    "reason": "Complete matching vendor kernel corresponding source/build materials have not been collected; import an existing vendor kernel with --kernel."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "status": "ready",
+  "backend": "ncnn_pl30",
+  "pl_acceleration": true,
+  "precision": "INT16 MAC / INT8 fused conv0-30 + FP32 remainder",
+  "accelerated_layers": [
+    "convrelu_0",
+    "convrelu_1",
+    "convrelu_2",
+    "convrelu_3",
+    "convrelu_4",
+    "convrelu_5",
+    "convrelu_6",
+    "convrelu_7",
+    "convrelu_8",
+    "convrelu_9",
+    "convrelu_10",
+    "convrelu_11",
+    "convrelu_12",
+    "convrelu_13",
+    "convrelu_14",
+    "convrelu_15",
+    "convrelu_16",
+    "convrelu_17",
+    "convrelu_18",
+    "convrelu_19",
+    "convrelu_20",
+    "convrelu_21",
+    "convrelu_22",
+    "convrelu_23",
+    "convrelu_24",
+    "convrelu_25",
+    "convrelu_26",
+    "convrelu_27",
+    "convrelu_28",
+    "convrelu_29",
+    "convrelu_30"
+  ],
+  "resident_subgraphs": [
+    [
+      0,
+      30
+    ]
+  ],
+  "ddr_boundaries": [],
+  "final_skip_outputs": [
+    "conv10",
+    "conv20"
+  ],
+  "input_size": 320,
+  "activation": "ReLU",
+  "num_classes": 5,
+  "expected_upper_ip": "192.168.10.120",
+  "response_mode": "same_http_connection"
+}

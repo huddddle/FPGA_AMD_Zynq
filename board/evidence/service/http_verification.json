@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "http_roundtrip_ms": 1500.0785999000072,
+  "same_input_sha256": "648bc664d3bbba6feecf02ccfc0db465ed8f22c97a5c477aeaac6bb090626f13",
+  "original_wh": [
+    300,
+    300
+  ],
+  "direct_http_detections_equal": true,
+  "detected_objects": 5,
+  "forward_ms": 849.010435,
+  "profile": {
+    "transactions": 47,
+    "tx_bytes": 2911888,
+    "rx_bytes": 289792,
+    "hardware_errors": 0,
+    "feature_ddr_reimports": 0,
+    "graph_load_ms": 0.866517,
+    "graph_copy_ms": 0.869398,
+    "graph_wait_ms": 98.21397,
+    "link6_ms": 1.899892,
+    "middle_ms": 40.041406,
+    "conv11_ms": 30.898915,
+    "skip10_ms": 3.772652,
+    "link11_ms": 0.839709,
+    "deep_run_ms": 40.237376,
+    "conv21_ms": 20.417235,
+    "skip20_ms": 0.968807,
+    "link21_ms": 0.746906,
+    "block22_ms": 46.245152,
+    "restore_ms": 8.600093
+  },
+  "response": {
+    "inference_ms": 849.010435,
+    "result": [
+      {
+        "class_name": "ca_shang",
+        "score": 0.874765933,
+        "loc": [
+          173.966599,
+          151.396301,
+          229.257736,
+          200.397232
+        ]
+      },
+      {
+        "class_name": "ca_shang",
+        "score": 0.829145014,
+        "loc": [
+          132.168182,
+          165.274628,
+          150.752106,
+          229.792297
+        ]
+      },
+      {
+        "class_name": "ca_shang",
+        "score": 0.823754966,
+        "loc": [
+          163.291504,
+          91.4080963,
+          213.312897,
+          133.30542
+        ]
+      },
+      {
+        "class_name": "ca_shang",
+        "score": 0.785804391,
+        "loc": [
+          126.278572,
+          63.5299149,
+          145.019821,
+          129.55098
+        ]
+      },
+      {
+        "class_name": "ca_shang",
+        "score": 0.759742022,
+        "loc": [
+          65.1242752,
+          148.509781,
+          131.433563,
+          164.07843
+        ]
+      }
+    ],
+    "len": 5,
+    "request_id": "c1fcf214889b",
+    "result_dir": "InferenceResult/board_1793642114010294_709_0",
+    "backend": "ncnn_pl30",
+    "pl_acceleration": true,
+    "precision": "INT16 MAC / INT8 fused conv0-30 + FP32 remainder",
+    "accelerated_layers": [
+      "convrelu_0",
+      "convrelu_1",
+      "convrelu_2",
+      "convrelu_3",
+      "convrelu_4",
+      "convrelu_5",
+      "convrelu_6",
+      "convrelu_7",
+      "convrelu_8",
+      "convrelu_9",
+      "convrelu_10",
+      "convrelu_11",
+      "convrelu_12",
+      "convrelu_13",
+      "convrelu_14",
+      "convrelu_15",
+      "convrelu_16",
+      "convrelu_17",
+      "convrelu_18",
+      "convrelu_19",
+      "convrelu_20",
+      "convrelu_21",
+      "convrelu_22",
+      "convrelu_23",
+      "convrelu_24",
+      "convrelu_25",
+      "convrelu_26",
+      "convrelu_27",
+      "convrelu_28",
+      "convrelu_29",
+      "convrelu_30"
+    ],
+    "resident_subgraphs": [
+      [
+        0,
+        30
+      ]
+    ],
+    "ddr_boundaries": [],
+    "final_skip_outputs": [
+      "conv10",
+      "conv20"
+    ]
+  },
+  "full_dataset_evaluated": false
+}

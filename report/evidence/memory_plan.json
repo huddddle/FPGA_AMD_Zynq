@@ -1,0 +1,9 @@
+{
+  "capture6_words": 25600,
+  "graph_collision_free": true,
+  "staging_collision_free": true,
+  "all_sources_outside_destination_after_staging": true,
+  "source_words": 25600,
+  "destination_words": 25600,
+  "new_feature_ramb36": 0
+}

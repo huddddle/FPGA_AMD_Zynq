@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "stdout": "[检查通过] 后端=ncnn_pl30；未发起DMA\n[检查通过] 后端=ncnn_pl30；未发起DMA\n[就绪] PL卷积0～30服务已运行，PID=695，端口 8080\n[监视] Ctrl+C 退出日志监视；后台推理服务继续运行\n[等待] 仅显示从现在起的新日志，请发送图片……\n",
+  "returncode": -2,
+  "irq_before": [
+    1876,
+    1876
+  ],
+  "irq_after": [
+    1876,
+    1876
+  ],
+  "service_still_ready": true,
+  "old_request_not_replayed": true
+}

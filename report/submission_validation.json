@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "scope": "Independent repository packaging, software rebuild and local replay; not new hardware or board acceptance",
+  "arm32_build": true,
+  "qemu_postprocess": [
+    {
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "QEMU_LD_PREFIX=/mnt/d/CodexCache/Yolo26n_arm32_audit_2026-09-21_183258/runtime",
+        "qemu-arm",
+        "/mnt/d/CodexCache/FPGA_AMD_Zynq_submission_2026-11-03_232451/arm_build/yolo26_detect",
+        "--self-test"
+      ],
+      "exit_code": 0,
+      "stdout": "Postprocess self-test OK\n"
+    },
+    {
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--",
+        "env",
+        "QEMU_LD_PREFIX=/mnt/d/CodexCache/Yolo26n_arm32_audit_2026-09-21_183258/runtime",
+        "qemu-arm",
+        "/mnt/d/CodexCache/FPGA_AMD_Zynq_submission_2026-11-03_232451/arm_build/detection_custom_test"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: legacy 320/80 and custom 640/5 postprocess\n"
+    }
+  ],
+  "python_syntax_checked": [
+    "build/build_ps.py",
+    "board/prepare_deployment.py",
+    "sim/run_rtl.py",
+    "sim/test_verifier.py",
+    "skill/verify_submission.py"
+  ],
+  "tcl_syntax_complete": [
+    "build/build_pl30.tcl",
+    "build/signoff.tcl",
+    "build/bd/sys_resident.tcl"
+  ],
+  "tcl_vivado_execution_performed": false,
+  "kernel_is_external_dependency": true,
+  "deployment_original_hash_check": {
+    "passed": true,
+    "kernel_imported_from_existing_vendor_binary": true,
+    "all_service_and_experiment_sha256_verified": true,
+    "ssh_or_board_changes_performed": false
+  },
+  "new_board_test_performed": false,
+  "new_hardware_build_performed": false,
+  "map_evaluated": false,
+  "rtl_replay": {
+    "passed": true,
+    "packets": 97,
+    "compared_words": 144920,
+    "ticks": 55569579,
+    "same_as_frozen_run": true,
+    "compile_warnings_retained": true
+  },
+  "checker_regression": {
+    "passed": true,
+    "known_literal_sha256": true,
+    "tampered_byte_rejected": true,
+    "outside_path_rejected": true
+  },
+  "local_markdown_links_checked": 42,
+  "no_development_filenames_or_board_state_changed_by_this_task": true,
+  "scope_note": "Current submission is the frozen verified baseline. Existing board evidence is archived; no new board or Vivado run was performed during formatting."
+}

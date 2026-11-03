@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "selftest_passed": true,
+  "cpu_output_sha256": "c3d76a81fafb73bcfed120f3babeb9646909edd1d21d6ab7a30faa3aca3d69c8",
+  "pl_not_executed_in_qemu": true
+}

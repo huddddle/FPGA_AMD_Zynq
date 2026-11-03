@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "asset_files": 20,
+  "runtime_assets_complete": true,
+  "model_weights_and_scales_frozen": true,
+  "shell_lf_verified": true,
+  "board_promoted_and_verified": true,
+  "board_evidence": "http_verification.json and final_asset_verification.json"
+}

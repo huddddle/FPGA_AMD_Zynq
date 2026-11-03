@@ -1,0 +1,20 @@
+{
+  "user_requested": [
+    "continuous convrelu0..30",
+    "default PL30 HTTP service",
+    "README and main synchronization after acceptance"
+  ],
+  "proposal_only": [
+    "64bit DMA/SG",
+    "BRAM optimization"
+  ],
+  "model_quantization_unchanged": true,
+  "default_sd_boot_files_preserved": true,
+  "full_map_evaluation": false,
+  "issue_directory_writes": false,
+  "intermediate_feature_ddr_reimports": 0,
+  "final_skip_outputs": [
+    "conv10",
+    "conv20"
+  ]
+}

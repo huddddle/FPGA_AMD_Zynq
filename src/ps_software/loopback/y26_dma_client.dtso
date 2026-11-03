@@ -1,0 +1,21 @@
+/dts-v1/;
+/plugin/;
+
+/*
+ * Client node only: the base tree must already contain the NEW AXI DMA node,
+ * clocks, IRQs and hardware mapping generated from this project's XSA.
+ * "dma" below must be that controller's actual exported DT label.
+ * This is not a bitstream-loading overlay and does not declare dma-coherent.
+ */
+/ {
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			y26_dma_loopback {
+				compatible = "y26,dma-loopback";
+				dmas = <&dma 0>, <&dma 1>;
+				dma-names = "tx", "rx";
+			};
+		};
+	};
+};

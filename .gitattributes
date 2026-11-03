@@ -1,0 +1,16 @@
+# Preserve the exact source and evidence bytes matched to the frozen hardware.
+* -text whitespace=cr-at-eol
+# Imported source/evidence retain their original formatting as well as bytes.
+src/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+board/app/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+board/pl30/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+board/evidence/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+report/evidence/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+sim/tb/** whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+# Original protocol Markdown intentionally uses two-space hard line breaks.
+report/http_protocol.md whitespace=cr-at-eol,-blank-at-eol
+*.rpt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+*.tcl whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+*.stdout whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+*.json whitespace=cr-at-eol

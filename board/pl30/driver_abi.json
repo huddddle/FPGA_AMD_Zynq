@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "kernel_release": "5.15.0-xilinx",
+  "vermagic": "5.15.0-xilinx SMP preempt mod_unload modversions ARMv7 p2v8",
+  "imported_symbols": 39,
+  "kernel_crc_mismatches": {},
+  "previous_module_crc_map_unchanged": true,
+  "v1_limit": 4096,
+  "v2_limit": 524288,
+  "ddr_buffer_total_bytes": 1048576,
+  "board_loaded": false,
+  "module_sha256": "29ae92eb29f9d6c039e3af145711fc19b993dbe77b6142c97fc7ac2b8578b15f",
+  "previous_module_sha256": "6011bf56e14065087aab5fa8927c4c20997ea9890b7d99e0cdc2ad7cefe6d073",
+  "sources": {
+    "y26_dma_client.c": "19ddc6818b89906f9c6efaa2ddcf87e950e95b4b4dbe04b2e2f98fd173861823",
+    "y26_dma_uapi.h": "3c072dc39f64429b774777ee24a37fe57970f6f2b57d56a37d58b92701c78d88"
+  },
+  "scope": "Offline build/CRC/ABI check; no allocation, load, transfer or bandwidth measurement on board"
+}
