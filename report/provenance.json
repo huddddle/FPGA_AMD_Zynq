@@ -1616,8 +1616,8 @@
     {
       "path": "build/build_ps.py",
       "source_path": "sw/petalinux/scripts/build_native.py",
-      "sha256": "50dca9c974d5c2fc2ee8739864e3a12444d63abf65e6988d8b0820510c23755a",
-      "modified_for_submission": "Relocated build roots and ASCII work mirror; CMake source list aligned with verified native compiler input. Runtime C++ and RTL preserved byte-for-byte.",
+      "sha256": "c0759b0b6f9eec6d411f8d7ada62cc0098dbf686ff96a720ce71c5c8c42da7b9",
+      "modified_for_submission": "Relocated roots and ASCII work mirror; compile frozen runtime sources into the service, postprocess test, and PL30 standalone checker. Runtime C++ and RTL remain byte-for-byte frozen.",
       "source_sha256": "1f108a365b10b2da803bb0a90fcb886a6ec20f9ff2f3bb2b56fe50e7956b47a5"
     }
   ],

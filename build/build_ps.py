@@ -37,8 +37,9 @@ def main():
     accel = mirror / "conv_accel/native"
     flags += ["-I", str(accel), "-ffp-contract=off"]
     for name, entry in [("yolo26_detect", source / "yolo26_detect.cpp"),
-                        ("detection_custom_test", source / "tests/detection_custom_test.cpp")]:
-        extra = [str(accel / n) for n in ("raw_frame.cpp", "two_layer.cpp", "channel_conv.cpp", "fusion.cpp", "tile_transport.cpp", "resident_prefix.cpp")] if name == "yolo26_detect" else []
+                        ("detection_custom_test", source / "tests/detection_custom_test.cpp"),
+                        ("y26-continuous30-check", accel / "continuous30_check.cpp")]:
+        extra = [str(accel / n) for n in ("raw_frame.cpp", "two_layer.cpp", "channel_conv.cpp", "fusion.cpp", "tile_transport.cpp", "resident_prefix.cpp")] if name != "detection_custom_test" else []
         subprocess.run(flags + [str(entry), *extra, str(ncnn / "lib/libncnn.a"), "-lpthread", "-lm",
                                 "-o", str(build / name)], check=True)
         print(f"Built {build / name}", flush=True)

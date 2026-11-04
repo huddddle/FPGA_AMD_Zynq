@@ -19,4 +19,12 @@ python -B skill/verify_submission.py
 
 仅只读检查，默认定位本仓库；`--root`可指定另一份相同格式提交。失败输出具体路径并返回非零，不静默补造文件或数据。其他项目可以复用 `check_hashes(root, entries)`，但硬件身份、目录规范、资源阈值和数值契约必须换成项目自己的事实。
 
+固定输入的实板结果下载后，**PowerShell 或 Bash，在仓库根目录执行：**
+
+```text
+python -B skill/verify_submission.py --results D:/FPGA_AMD_Zynq_results/pl30_check --backend pl30
+```
+
+`--results` 为实际结果目录；`--backend pl30` 校验三个 INT8 出口、尾网输出及事务报告。CPU 固定输入输出使用 `--backend cpu`，与独立 CPU 黄金参考比较。该功能只读文件，不执行推理。真实 PL30 归档结果已验证通过，改变 C30 一个字节会被拒绝；不能用于不同输入、模型或量化方案。
+
 已知跨场景可复用的是文件绑定/计时方法和提示词结构；**尚未在另一块板或另一支队伍的干净环境独立验证**，不虚构跨设备迁移成功率。

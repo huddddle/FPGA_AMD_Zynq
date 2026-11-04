@@ -72,5 +72,16 @@
   },
   "local_markdown_links_checked": 42,
   "no_development_filenames_or_board_state_changed_by_this_task": true,
-  "scope_note": "Current submission is the frozen verified baseline. Existing board evidence is archived; no new board or Vivado run was performed during formatting."
+  "scope_note": "Current submission is the frozen verified baseline. Existing board evidence is archived; no new board or Vivado run was performed during formatting.",
+  "followup_pl30_audit_2026_11_04": {
+    "passed": true,
+    "evidence": "evidence/reproduction_audit.json",
+    "all_three_arm32_programs_built": true,
+    "qemu_cpu_matches_independent_golden": true,
+    "downloaded_results_verifier_passes_positive_and_negative_checks": true,
+    "frozen_runtime_rtl_model_bit_dt_and_original_evidence_unchanged": true,
+    "local_markdown_links_checked": 78,
+    "new_board_or_vivado_run": false,
+    "dataset_map_evaluated": false
+  }
 }

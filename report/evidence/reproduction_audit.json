@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "date": "2026-11-04",
+  "scope": "Frozen PL0..30 submission reproduction and documentation only",
+  "accelerated_nodes": 31,
+  "frozen_source_commit": "dfd7f4f0c11e4edadc0b1743d16a116c45c8934d",
+  "preserved_paths": [
+    "src",
+    "board/app",
+    "board/pl30",
+    "data",
+    "build/reports",
+    "board/evidence",
+    "report/evidence/results.json",
+    "report/evidence/rtl.json"
+  ],
+  "all_frozen_runtime_and_board_evidence_unchanged": true,
+  "result_cli_red": {
+    "command": [
+      "C:\\Users\\huddd\\Desktop\\Yolo26n\\env\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\skill\\verify_submission.py",
+      "--results",
+      "C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\board\\evidence\\actual\\smoke\\0\\pl30",
+      "--backend",
+      "pl30"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "usage: verify_submission.py [-h] [--root ROOT]\nverify_submission.py: error: unrecognized arguments: --results C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\board\\evidence\\actual\\smoke\\0\\pl30 --backend pl30\n"
+  },
+  "result_cli_green": {
+    "command": [
+      "C:\\Users\\huddd\\Desktop\\Yolo26n\\env\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\skill\\verify_submission.py",
+      "--results",
+      "C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\board\\evidence\\actual\\smoke\\0\\pl30",
+      "--backend",
+      "pl30"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"passed\": true,\n  \"files_checked\": 309,\n  \"frozen_rtl_files\": 18,\n  \"source_commit\": \"dfd7f4f0c11e4edadc0b1743d16a116c45c8934d\",\n  \"bit_sha256\": \"d4c8b7f9426ecddc3c4d344bd0920a61a1acc7d9a99d48fbf275665d2f463a2e\",\n  \"original_service_binding_verified\": true,\n  \"signed_hardware_evidence_verified\": true,\n  \"rtl_vector_packets\": 97,\n  \"external_vendor_kernel_required\": true,\n  \"external_kernel_bytes_verified_by_this_check\": false,\n  \"new_hardware_build_performed\": false,\n  \"new_board_test_performed\": false,\n  \"map_evaluated\": false,\n  \"inference_results\": {\n    \"passed\": true,\n    \"backend\": \"pl30\",\n    \"files_checked\": 4,\n    \"sha256\": {\n      \"output.f32\": \"6cd6b3bd357c3c46688870b85d83bd34de92d55288cd429160f47224ca09427a\",\n      \"conv10.i8\": \"40e9160cfc3b917da0092e627262f0932cf9f2c6395809c629c7e8e2c94ca9da\",\n      \"conv20.i8\": \"740596de0bbc50c371f1dd72a4f28552e9034078e3d9115a7494d0e70a1d14f9\",\n      \"conv30.i8\": \"2ed781e30ce20d417fb3a7a99fa0948d0f497863293e756b9d286abe004c88c8\"\n    },\n    \"dataset_accuracy_evaluated\": false\n  }\n}\n",
+    "stderr": ""
+  },
+  "result_checker_regression": {
+    "passed": true,
+    "known_literal_sha256": true,
+    "tampered_byte_rejected": true,
+    "outside_path_rejected": true,
+    "archived_cpu_results_verified": true,
+    "archived_pl30_results_verified": true,
+    "changed_int8_output_rejected": true
+  },
+  "arm_build_red": {
+    "command": [
+      "C:\\Users\\huddd\\Desktop\\Yolo26n\\env\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\build\\build_ps.py",
+      "--compiler",
+      "D:/Vivado2018_3/SDK/2018.3/gnu/aarch32/nt/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++.exe",
+      "--ncnn-dir",
+      "C:/Users/huddd/Desktop/Yolo26n/arm32/ncnn-install",
+      "--build-dir",
+      "D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build"
+    ],
+    "compiler_exit_code": 0,
+    "acceptance_failed": "y26-continuous30-check was missing although the build command returned success"
+  },
+  "arm_build_green": {
+    "command": [
+      "C:\\Users\\huddd\\Desktop\\Yolo26n\\env\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\huddd\\Desktop\\FPGA设计大赛全部资料\\FPGA_AMD_Zynq\\build\\build_ps.py",
+      "--compiler",
+      "D:/Vivado2018_3/SDK/2018.3/gnu/aarch32/nt/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++.exe",
+      "--ncnn-dir",
+      "C:/Users/huddd/Desktop/Yolo26n/arm32/ncnn-install",
+      "--build-dir",
+      "D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build"
+    ],
+    "exit_code": 0,
+    "stdout": "Built D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\yolo26_detect\r\nBuilt D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\detection_custom_test\r\nBuilt D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\y26-continuous30-check\r\nARM binaries built; execute with a compatible target runtime or QEMU before deployment.\r\n",
+    "stderr": "In file included from d:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\map:60:0,\r\n                 from D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\source\\conv_accel\\native\\two_layer.cpp:11:\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\stl_tree.h: In member function 'std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*> std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_M_get_insert_hint_unique_pos(std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::const_iterator, const key_type&) [with _Key = int; _Val = std::pair<const int, double>; _KeyOfValue = std::_Select1st<std::pair<const int, double> >; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, double> >]':\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\stl_tree.h:2130:5: note: parameter passing for argument of type 'std::_Rb_tree<int, std::pair<const int, double>, std::_Select1st<std::pair<const int, double> >, std::less<int>, std::allocator<std::pair<const int, double> > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const int, double> >}' changed in GCC 7.1\r\n     _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::\r\n     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\nIn file included from d:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\vector:69:0,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/platform.h:437,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/allocator.h:12,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/mat.h:29,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/blob.h:7,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/net.h:7,\r\n                 from D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\source\\conv_accel\\native\\resident_prefix.hpp:2,\r\n                 from D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\source\\conv_accel\\native\\continuous30_check.cpp:1:\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const double&}; _Tp = double; _Alloc = std::allocator<double>]':\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\vector.tcc:394:7: note: parameter passing for argument of type 'std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}' changed in GCC 7.1\r\n       vector<_Tp, _Alloc>::\r\n       ^~~~~~~~~~~~~~~~~~~\r\nIn file included from d:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\vector:64:0,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/platform.h:437,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/allocator.h:12,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/mat.h:29,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/blob.h:7,\r\n                 from C:\\Users\\huddd\\Desktop\\Yolo26n\\arm32\\ncnn-install\\include\\ncnn/net.h:7,\r\n                 from D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\source\\conv_accel\\native\\resident_prefix.hpp:2,\r\n                 from D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\source\\conv_accel\\native\\continuous30_check.cpp:1:\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\stl_vector.h: In function 'int main(int, char**)':\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\stl_vector.h:948:21: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<double*, std::vector<double> >' changed in GCC 7.1\r\n    _M_realloc_insert(end(), __x);\r\n    ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\r\nIn file included from d:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\map:60:0,\r\n                 from D:\\CodexCache\\FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433\\arm_build\\source\\conv_accel\\native\\two_layer.cpp:11:\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\stl_tree.h: In member function 'std::pair<std::_Rb_tree_node_base*, std::_Rb_tree_node_base*> std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_M_get_insert_hint_unique_pos(std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::const_iterator, const key_type&) [with _Key = int; _Val = std::pair<const int, double>; _KeyOfValue = std::_Select1st<std::pair<const int, double> >; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, double> >]':\r\nd:\\vivado2018_3\\sdk\\2018.3\\gnu\\aarch32\\nt\\gcc-arm-linux-gnueabi\\arm-linux-gnueabihf\\include\\c++\\7.3.1\\bits\\stl_tree.h:2130:5: note: parameter passing for argument of type 'std::_Rb_tree<int, std::pair<const int, double>, std::_Select1st<std::pair<const int, double> >, std::less<int>, std::allocator<std::pair<const int, double> > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const int, double> >}' changed in GCC 7.1\r\n     _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::\r\n     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n"
+  },
+  "rebuilt_programs": {
+    "yolo26_detect": {
+      "sha256": "c75058101021893381a4e18af9d80a0c3bda6ac35ea1feded1efc50086dfed0c",
+      "elf_class": 32,
+      "architecture": "ARM",
+      "little_endian": true
+    },
+    "detection_custom_test": {
+      "sha256": "185d76bb2a2890c9a25c350c77f8c4fe8b5f715129ce6b5a41de0a29762eb854",
+      "elf_class": 32,
+      "architecture": "ARM",
+      "little_endian": true
+    },
+    "y26-continuous30-check": {
+      "sha256": "6c86e962ee35112f86ce516cc414e389e14fcd93c49f7b69323ef501ee49a6a3",
+      "elf_class": 32,
+      "architecture": "ARM",
+      "little_endian": true
+    }
+  },
+  "runtime": {
+    "passed": true,
+    "runs": [
+      {
+        "command": [
+          "wsl.exe",
+          "-d",
+          "Ubuntu",
+          "--",
+          "env",
+          "QEMU_LD_PREFIX=/mnt/d/CodexCache/Yolo26n_arm32_audit_2026-09-21_183258/runtime",
+          "qemu-arm",
+          "-cpu",
+          "cortex-a9",
+          "/mnt/d/CodexCache/FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433/arm_build/yolo26_detect",
+          "--self-test"
+        ],
+        "exit_code": 0,
+        "stdout": "Postprocess self-test OK\n",
+        "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000"
+      },
+      {
+        "command": [
+          "wsl.exe",
+          "-d",
+          "Ubuntu",
+          "--",
+          "env",
+          "QEMU_LD_PREFIX=/mnt/d/CodexCache/Yolo26n_arm32_audit_2026-09-21_183258/runtime",
+          "qemu-arm",
+          "-cpu",
+          "cortex-a9",
+          "/mnt/d/CodexCache/FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433/arm_build/detection_custom_test"
+        ],
+        "exit_code": 0,
+        "stdout": "PASS: legacy 320/80 and custom 640/5 postprocess\n",
+        "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000"
+      },
+      {
+        "command": [
+          "wsl.exe",
+          "-d",
+          "Ubuntu",
+          "--",
+          "env",
+          "QEMU_LD_PREFIX=/mnt/d/CodexCache/Yolo26n_arm32_audit_2026-09-21_183258/runtime",
+          "qemu-arm",
+          "-cpu",
+          "cortex-a9",
+          "/mnt/d/CodexCache/FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433/arm_build/y26-continuous30-check",
+          "--backend",
+          "cpu",
+          "--param",
+          "/mnt/c/Users/huddd/Desktop/FPGA设计大赛全部资料/FPGA_AMD_Zynq/data/model/model.ncnn.param",
+          "--bin",
+          "/mnt/c/Users/huddd/Desktop/FPGA设计大赛全部资料/FPGA_AMD_Zynq/data/model/model.ncnn.bin",
+          "--rgb",
+          "/mnt/c/Users/huddd/Desktop/FPGA设计大赛全部资料/FPGA_AMD_Zynq/board/pl30/input.rgb",
+          "--output-dir",
+          "/mnt/d/CodexCache/FPGA_AMD_Zynq_pl30_audit_2026-11-04_101433/qemu_cpu",
+          "--warmup",
+          "0",
+          "--runs",
+          "1",
+          "--capture",
+          "0"
+        ],
+        "exit_code": 0,
+        "stdout": "CONTINUOUS30 CHECK PASS cpu\n",
+        "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000"
+      }
+    ],
+    "cpu_output_sha256": "c3d76a81fafb73bcfed120f3babeb9646909edd1d21d6ab7a30faa3aca3d69c8",
+    "golden_output_identical": true,
+    "board_accessed": false,
+    "qemu_timing_is_not_board_performance": true
+  },
+  "python_syntax_checked": [
+    "board/prepare_deployment.py",
+    "board/app/server.py",
+    "build/build_ps.py",
+    "sim/run_rtl.py",
+    "sim/test_verifier.py",
+    "skill/verify_submission.py"
+  ],
+  "new_rtl_replay_performed": false,
+  "new_vivado_build_performed": false,
+  "new_board_test_performed": false,
+  "dataset_map_evaluated": false,
+  "pynq_implemented": false,
+  "unresolved": [
+    "Training code/data rights and full accuracy evaluation",
+    "Complete matching vendor kernel source, configuration and build materials",
+    "Clean-machine end-to-end reproduction",
+    "Physical sorting closed-loop evidence"
+  ],
+  "local_markdown_links_checked": 78
+}

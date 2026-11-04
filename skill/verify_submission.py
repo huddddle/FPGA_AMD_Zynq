@@ -56,8 +56,31 @@ def verify(root):
     if int(vectors.splitlines()[0])!=97 or hashlib.sha256(vectors).hexdigest()!=prov['rtl_vectors_uncompressed_sha256']:raise ValueError('RTL vectors changed')
     return {'passed':True,'files_checked':len(names),'frozen_rtl_files':len(prov['frozen_rtl_sha256']),'source_commit':prov['source_commit'],'bit_sha256':sha(bit),'original_service_binding_verified':True,'signed_hardware_evidence_verified':True,'rtl_vector_packets':97,'external_vendor_kernel_required':True,'external_kernel_bytes_verified_by_this_check':False,'new_hardware_build_performed':False,'new_board_test_performed':False,'map_evaluated':False}
 
+def verify_results(root, results, backend):
+    """Compare downloaded inference files with the independently frozen oracle."""
+    reference=root/'data/reference'
+    expected={'output.f32':sha(reference/('output_cpu.f32' if backend=='cpu' else 'output.f32'))}
+    if backend=='pl30':
+        expected.update({name:sha(reference/name) for name in ['conv10.i8','conv20.i8','conv30.i8']})
+    check_hashes(results,expected)
+    report=json.loads((results/'report.json').read_text())
+    if report['backend']!=backend:raise ValueError('Inference report backend does not match requested oracle')
+    if backend=='pl30':
+        profile=report['profile']
+        if (profile['transactions'],profile['tx_bytes'],profile['rx_bytes'],profile['hardware_errors'],profile['feature_ddr_reimports'])!=(47,2911888,289792,0,0):
+            raise ValueError('Inference report disagrees with the frozen PL30 boundary')
+    return {'passed':True,'backend':backend,'files_checked':len(expected),'sha256':expected,'dataset_accuracy_evaluated':False}
+
+
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);a=p.parse_args()
-    try:print(json.dumps(verify(a.root),ensure_ascii=False,indent=2));return 0
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1])
+    p.add_argument('--results',type=Path,help='Read-only comparison of downloaded fixed-input inference results')
+    p.add_argument('--backend',choices=['cpu','pl30'],default='pl30',help='Select the corresponding frozen oracle')
+    a=p.parse_args()
+    try:
+        result=verify(a.root)
+        if a.results is not None:result['inference_results']=verify_results(a.root.resolve(),a.results.resolve(),a.backend)
+        print(json.dumps(result,ensure_ascii=False,indent=2));return 0
     except (OSError,ValueError,KeyError,StopIteration,zipfile.BadZipFile) as e:print('SUBMISSION CHECK FAILED: '+str(e),file=sys.stderr);return 1
 if __name__=='__main__':raise SystemExit(main())

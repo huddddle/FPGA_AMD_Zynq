@@ -77,6 +77,14 @@ FPGA_AMD_Zynq/
 
 ## 从零复现顺序
 
+先取得本提交仓库；已经下载的用户直接进入第 1 步。**PowerShell 或 Bash，在准备存放项目的目录执行：**
+
+```text
+git clone https://github.com/huddddle/FPGA_AMD_Zynq.git
+```
+
+该命令下载提交源码和已归档材料，生成 `FPGA_AMD_Zynq/`；网络失败时先解决 GitHub 访问问题。随后进入该目录执行下面步骤；Windows PowerShell 使用 `Set-Location ./FPGA_AMD_Zynq`，Bash 使用 `cd ./FPGA_AMD_Zynq`，两者均只改变当前工作目录。
+
 1. **先核对文件与身份。** 在仓库根目录、PowerShell 或 Bash 中执行：
 
 ```text
@@ -91,9 +99,19 @@ python -B skill/verify_submission.py
 
 4. **功能与数值检查。** 在匹配的实验 Linux 中执行固定输入检查；实际出口与 `data/reference` 比较，再启动 HTTP。不能把 CPU 输出和量化 PL 输出应当完全相同作为判据，两者各有独立黄金输出。
 
+取回固定输入的 PL30 结果后，**PowerShell 或 Bash，在仓库根目录执行：**
+
+```text
+python -B skill/verify_submission.py --results D:/FPGA_AMD_Zynq_results/pl30_check --backend pl30
+```
+
+`--results` 指向实际下载的结果目录（按电脑路径替换），`--backend pl30` 同时核对 C10/C20/C30、18900 项尾网输出和 47 次事务的报告；预期 `inference_results.passed=true`。只读检查，不连接开发板。详细下载与验收顺序见 [board/README.md](board/README.md)。
+
 5. **测量完整边界开销。** 各路径同条件轮换，保留所有 7 次记录和预热条件；前向、HTTP 往返和硬件嵌套计数分别报告。[已有实测与复测方法](report/design_report.md)。
 
 ## 开源范围与已知缺口
+
+逐项材料位置和验收边界见 [参赛要求对照表](report/requirements_matrix.md)。本工程使用 Linux/NCNN，不把尚未实现的 PYNQ 加分项写为成果。
 
 原创 RTL、原创用户态源码、整理工具与文档使用 [MIT](LICENSE)，署名 Landon Yang；GPL 内核客户端、NCNN、stb、YOLO26n 模型及由模型导出的权重不被重新许可为 MIT。详见[许可范围](report/license_scope.md)与[模型说明](data/model/README.md)。
 
