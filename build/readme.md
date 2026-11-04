@@ -54,7 +54,7 @@ set ::env(Y26_BUILD_DIR) {D:/CodexCache/FPGA_AMD_Zynq_hw-build_2026-11-04_120000
 $env:Y26_BUILD_DIR='D:/CodexCache/FPGA_AMD_Zynq_hw-build_2026-11-04_120000/vivado'; New-Item -ItemType Directory -Path $env:Y26_BUILD_DIR -Force | Out-Null; & 'D:/Vivado2022_2/Vivado/2022.2/bin/vivado.bat' -mode batch -source './build/build_pl30.tcl' -notrace -nojournal -log "$env:Y26_BUILD_DIR/build.log"
 ```
 
-`;` 依次设置环境、创建本次工作目录、启动工具，`&` 调用带路径的程序，`-source` 指定入口，`-log` 保存日志；`-Force` 仅允许工作目录预先存在，脚本仍拒绝已有工程子目录。示例目录中的日期时间请换为本次实际时间。入口固定100MHz、AltSpreadLogic_high/Explore和postroute AggressiveExplore；检查WNS/WHS、12类时序覆盖、零布线错误、DRC、单PE、DSP/BRAM与部分和存储。负裕量时停止，不导出bit；应分析本次失败路径，不降低约束伪装通过。预期产物在工作目录 `reports/`，新bit需重新核验DT、身份绑定和板端数值。
+`;` 依次设置环境、创建本次工作目录、启动工具，`&` 调用带路径的程序，`-source` 指定入口，`-log` 保存日志；`-Force` 仅允许工作目录预先存在，脚本仍拒绝已有工程子目录。示例目录中的日期时间请换为本次实际时间。入口固定100MHz、AltSpreadLogic_high/Explore和postroute AggressiveExplore；检查WNS/WHS、12类时序覆盖、零布线错误、DRC、单PE、DSP/BRAM与部分和存储。负裕量时停止，不导出bit；应分析本次失败路径，按目标时钟约束修复路径。预期产物在工作目录 `reports/`，新bit需重新核验DT、身份绑定和板端数值。
 
 本次仓库整理只对移植后的Tcl进行语法完整性和依赖核查，**没有新运行这套Vivado重建**；已有100MHz报告来自冻结版本。布局布线不保证跨机器逐字节重现bit或复现相同的8ps余量，验收以本次完整报告为准。
 
@@ -65,9 +65,25 @@ $env:Y26_BUILD_DIR='D:/CodexCache/FPGA_AMD_Zynq_hw-build_2026-11-04_120000/vivad
 **Ubuntu Bash，先设置实际匹配内核构建树及输出目录：**
 
 ```bash
-mkdir -p "$Y26_MODULE_OUT" && cp src/ps_software/loopback/y26_dma_client.c src/ps_software/loopback/y26_dma_uapi.h src/ps_software/loopback/Makefile "$Y26_MODULE_OUT/" && make -C "$KERNEL_BUILD" M="$Y26_MODULE_OUT" ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- modules
+mkdir -p "$Y26_MODULE_OUT" && cp src/ps_software/loopback/y26_dma_client.c src/ps_software/loopback/y26_dma_uapi.h "$Y26_MODULE_OUT/" && cp src/ps_software/loopback/makefile "$Y26_MODULE_OUT/Makefile" && make -C "$KERNEL_BUILD" M="$Y26_MODULE_OUT" ARCH=arm CROSS_COMPILE=arm-xilinx-linux-gnueabi- modules
 ```
 
 `Y26_MODULE_OUT` 为仓库外工作目录，`KERNEL_BUILD` 必须包含厂商相同配置、生成头文件和Module.symvers；`&&` 保证前一步成功再继续。该命令生成模块，不加载模块。版本字符串相同并不保证CRC兼容，重建后须核对符号CRC及实际内核。
 
-原厂系统来源为野火AC7020资料包 `0-快速测试手册/ZYNQ镜像/zynq.img`，本机原始路径 `F:/DevelopmentBoardResource/YeHuoAC7020`。完整镜像、PetaLinux安装器及匹配的厂商内核构建树/Module.symvers不随此仓库重复分发。可从[野火官方](https://www.embedfire.com/)对应板卡资料渠道取得；本发布未核实一个可匿名下载的完整匹配内核源码/SDK链接。当前发布只记录已验原厂zImage的身份（4503288字节，SHA311d2c1f…），不在新开源仓库重复分发该二进制；部署时从现有厂家镜像/已有zImage导入并完整核验。保留配套自有驱动源码和ABI记录，不宣称已具备完整原厂Linux从源码重建条件。
+原厂系统来源为野火AC7020资料包 `0-快速测试手册/ZYNQ镜像/zynq.img`，本机原始路径 `F:/DevelopmentBoardResource/YeHuoAC7020`。完整镜像、PetaLinux安装器及匹配的厂商内核构建树/Module.symvers不随此仓库重复分发。可从[野火官方](https://www.embedfire.com/)对应板卡资料渠道取得；本发布未核实一个可匿名下载的完整匹配内核源码/SDK链接。当前发布只记录已验原厂zImage的身份（4503288字节，SHA311d2c1f…），不在新开源仓库重复分发该二进制；部署时从现有厂家镜像/已有zImage导入并完整核验。保留配套自有驱动源码和ABI记录，TODO：补充匹配的原厂 Linux 源码、补丁及构建配置。
+
+## 小写文件名与 CMake
+
+仓库中的原生构建模板为 `cmakelists.txt`。需要使用 CMake 时，先生成仓库外的源码工作副本。
+
+**PowerShell，在仓库根目录：**
+
+```powershell
+python -B build/build_ps.py --prepare-only --build-dir 'D:/CodexCache/zynq_native_2026-11-04_170000'
+```
+
+`--prepare-only` 只复制源码，并在工作副本内恢复 CMake 标准名称 `CMakeLists.txt`；`--build-dir` 必须在仓库外。示例目录换成本次任务与时间。生成的 `source/app/native/` 和 `source/conv_accel/native/` 可作为 CMake 源目录，配置时另行提供 NCNN 与工具链。正常 PS 交叉编译入口也会自动执行相同的准备步骤。
+
+## 工具版本说明
+
+本工程采用 Vivado 2022.2，以匹配现有 Zynq-7020 工程和板端 PetaLinux 2022.2 环境。比赛指南 §3.3.3.1 推荐 Vivado / Vitis 2026.1 或 2025.2，也允许其他版本，要求在报告中说明并提供可复现脚本。当前 Vivado Tcl 与 PS 编译入口均保存在本目录；新环境重建与上板复验记录仍需补充。

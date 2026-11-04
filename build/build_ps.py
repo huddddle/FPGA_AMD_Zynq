@@ -8,9 +8,10 @@ import shutil
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--compiler", required=True, type=Path, help="Matching ARM Linux C++ compiler")
-    parser.add_argument("--ncnn-dir", required=True, type=Path, help="NCNN installation containing include/ncnn and lib/libncnn.a")
+    parser.add_argument("--compiler", type=Path, help="Matching ARM Linux C++ compiler")
+    parser.add_argument("--ncnn-dir", type=Path, help="NCNN installation containing include/ncnn and lib/libncnn.a")
     parser.add_argument("--build-dir", required=True, type=Path, help="Absolute output directory outside the repository")
+    parser.add_argument("--prepare-only", action="store_true", help="Prepare source with canonical CMake names; do not compile")
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
     original = repo / "src/ps_software"
@@ -19,17 +20,26 @@ def main():
     build = args.build_dir.resolve()
     if build == repo or repo in build.parents:
         parser.error("--build-dir must be outside the repository")
-    compiler = args.compiler.resolve()
-    ncnn = args.ncnn_dir.resolve()
-    for required in [compiler, ncnn / "include/ncnn/net.h", ncnn / "lib/libncnn.a"]:
-        if not required.is_file():
-            parser.error(f"Missing build dependency: {required}")
+    if not args.prepare_only:
+        if args.compiler is None or args.ncnn_dir is None:
+            parser.error("--compiler and --ncnn-dir are required unless --prepare-only is used")
+        compiler = args.compiler.resolve()
+        ncnn = args.ncnn_dir.resolve()
+        for required in [compiler, ncnn / "include/ncnn/net.h", ncnn / "lib/libncnn.a"]:
+            if not required.is_file():
+                parser.error(f"Missing build dependency: {required}")
     build.mkdir(parents=True, exist_ok=True)
     # The verified SDK 2018.3 Windows compiler needs an ASCII source path.
     # Preserve source bytes, includes and relative UAPI paths in the work area.
     mirror = build / "source"
     for part in ("app/native", "conv_accel/native", "loopback"):
         shutil.copytree(original / part, mirror / part, dirs_exist_ok=True)
+    for part in ("app/native", "conv_accel/native"):
+        template = mirror / part / "cmakelists.txt"
+        template.rename(template.with_name("CMakeLists.txt"))
+    if args.prepare_only:
+        print(f"Prepared native source: {mirror}")
+        return
     source = mirror / "app/native"
     flags = [str(compiler), "-O3", "-std=c++11", "-mcpu=cortex-a9", "-mfpu=neon", "-mfloat-abi=hard",
              "-D_FILE_OFFSET_BITS=64", "-static-libstdc++", "-static-libgcc",

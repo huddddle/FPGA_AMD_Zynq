@@ -18,7 +18,7 @@ def main():
         dest=service/target;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(root/source,dest)
     shutil.copyfile(root/'board/app/pl30_manifest.json',service/'pl30_manifest.json')
     for f in (root/'board/pl30').iterdir():
-        if f.is_file():shutil.copyfile(f,experiment/f.name)
+        if f.is_file():shutil.copyfile(f,experiment/('SHA256SUMS' if f.name=='sha256sums' else f.name))
     shutil.copyfile(a.kernel,experiment/'zImage')
     manifest=json.loads((service/'pl30_manifest.json').read_text())
     for target,h in manifest['sha256'].items():

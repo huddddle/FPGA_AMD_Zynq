@@ -52,3 +52,7 @@
 |文档提及不存在的 `reference30.i8`|对照真实输出和仓库参考文件定位|改为 `data/reference/conv30.i8`，补下载及只读比较步骤|Markdown 本地链接和文件绑定检查，不改任何历史测量|
 
 失败和修正的实际命令/退出码保留在 [复现审计](evidence/reproduction_audit.json)。本轮不把软件模拟执行写成 PL 实板验收，也不补造 PYNQ 能力、训练材料或 mAP。
+
+## 双板文档与命名整理
+
+本次用户更新为全部小写命名；旧记录中的标准名称例外仅对应早期整理。最新过程见 [repository_cleanup.md](repository_cleanup.md)。

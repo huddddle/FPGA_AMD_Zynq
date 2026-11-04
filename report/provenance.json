@@ -647,7 +647,7 @@
       "source_sha256": "496fd013e509ad893b77a27403fe1f57eda53a0fe8b7980ad55982beab307bf6"
     },
     {
-      "path": "board/pl30/SHA256SUMS",
+      "path": "board/pl30/sha256sums",
       "source_path": "hw_handoff/conv320/continuous30/release/SHA256SUMS",
       "sha256": "d92325ff70ecd60ed60bb997767233667fb73ca86accedd7a25fced982d46ede",
       "source_sha256": "d92325ff70ecd60ed60bb997767233667fb73ca86accedd7a25fced982d46ede"
@@ -1073,7 +1073,7 @@
       "source_sha256": "977bd3cc8b836c683c128f4727e3a437759db92ef353eb0dda2f9dc78c3c5d85"
     },
     {
-      "path": "src/ps_software/app/native/CMakeLists.txt",
+      "path": "src/ps_software/app/native/cmakelists.txt",
       "source_path": "sw/petalinux/app/native/CMakeLists.txt",
       "sha256": "aabf5f198e46da3b8abeb1246907b5b4a0001b034613bb0dbbb7f5536c7a69e7",
       "source_sha256": "d5919bbe85ef7ad5ab520d19bc33982c2fbab347ff949c42230f3290b4498462",
@@ -1098,7 +1098,7 @@
       "source_sha256": "e4f5c9cb80792a65fdae7cf3ba8b39febda4d55d0611d414c0d33ef799cb2f12"
     },
     {
-      "path": "src/ps_software/app/native/third_party/ncnn/LICENSE.txt",
+      "path": "src/ps_software/app/native/third_party/ncnn/license.txt",
       "source_path": "sw/petalinux/app/native/third_party/ncnn/LICENSE.txt",
       "sha256": "7c974bac98848df46be1af5bdaa3c3c9c01f6082a90f55caeb7f60c6208aa255",
       "source_sha256": "7c974bac98848df46be1af5bdaa3c3c9c01f6082a90f55caeb7f60c6208aa255"
@@ -1122,7 +1122,7 @@
       "source_sha256": "dcf647003d7800563550134d7229393e382cc3a34fa8609a9d08c3a251c69212"
     },
     {
-      "path": "src/ps_software/conv_accel/native/CMakeLists.txt",
+      "path": "src/ps_software/conv_accel/native/cmakelists.txt",
       "source_path": "sw/petalinux/conv_accel/native/CMakeLists.txt",
       "sha256": "c6aa6962f98df7d2355bf933133d0678992759b4d4686644bd868635122941b7",
       "source_sha256": "c6aa6962f98df7d2355bf933133d0678992759b4d4686644bd868635122941b7"
@@ -1374,7 +1374,7 @@
       "source_sha256": "f7a070743620bd706be8cbf4ffe4c9995cff94fc521963de7b035eb1552d24b8"
     },
     {
-      "path": "src/ps_software/loopback/Makefile",
+      "path": "src/ps_software/loopback/makefile",
       "source_path": "sw/petalinux/loopback/Makefile",
       "sha256": "58dc7fe9a6dddd4b77b154d5fdca019e3201f6b416721a7440fef5afe02b35b0",
       "source_sha256": "58dc7fe9a6dddd4b77b154d5fdca019e3201f6b416721a7440fef5afe02b35b0"
@@ -1616,9 +1616,10 @@
     {
       "path": "build/build_ps.py",
       "source_path": "sw/petalinux/scripts/build_native.py",
-      "sha256": "c0759b0b6f9eec6d411f8d7ada62cc0098dbf686ff96a720ce71c5c8c42da7b9",
-      "modified_for_submission": "Relocated roots and ASCII work mirror; compile frozen runtime sources into the service, postprocess test, and PL30 standalone checker. Runtime C++ and RTL remain byte-for-byte frozen.",
-      "source_sha256": "1f108a365b10b2da803bb0a90fcb886a6ec20f9ff2f3bb2b56fe50e7956b47a5"
+      "sha256": "36e917fc21140982f1e896cff897ad9d950b51579eeafe1a18cc60065936f947",
+      "modified_for_submission": true,
+      "source_sha256": "1f108a365b10b2da803bb0a90fcb886a6ec20f9ff2f3bb2b56fe50e7956b47a5",
+      "submission_change": "2026-11-04 lowercase paths and public documentation cleanup"
     }
   ],
   "external_vendor_kernel": "board/external_assets.json"

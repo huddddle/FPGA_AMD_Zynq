@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-04",
+  "scope": "dual-board repository documentation, naming and packaging",
+  "native_source_prepare_test": {
+    "passed": true,
+    "canonical_cmake_names_generated": true,
+    "source_bytes_preserved": true
+  },
+  "fixed_output_checker_regression": {
+    "passed": true,
+    "known_literal_sha256": true,
+    "tampered_byte_rejected": true,
+    "outside_path_rejected": true,
+    "archived_cpu_results_verified": true,
+    "archived_pl30_results_verified": true,
+    "changed_int8_output_rejected": true
+  },
+  "deployment_package": {
+    "passed": true,
+    "existing_vendor_kernel_sha256": "311d2c1fa8448724df9d14c6493d08ef96e825b60e785a087fc81c52c128d98f",
+    "boot_and_service_hashes_verified": true,
+    "runtime_sha256sums_name_restored": true
+  },
+  "new_vivado_build_performed": false,
+  "new_board_test_performed": false,
+  "rtl_and_model_bytes_changed": false,
+  "materials": {
+    "aluminum_defect_detection_bilingual_poster.pptx": "1c50a804e8e91c4b9d8364358225a8c00dbf0ffbd6e9a17f1d66b09fe58ebb89",
+    "amd_fpga_competition_guide_2026.pdf": "c6ad82acd4f7bdcd13bd412e232ed85d05f2a87dd5e2cdd04f9d219f88b569fc"
+  },
+  "paths_and_links": {
+    "zynq": {
+      "invalid_names": [],
+      "local_links_checked": 73,
+      "broken_links": [],
+      "unexpected_frozen_source_changes": []
+    },
+    "raspberry_pi": {
+      "invalid_names": [],
+      "local_links_checked": 27,
+      "broken_links": [],
+      "unexpected_frozen_source_changes": []
+    }
+  }
+}

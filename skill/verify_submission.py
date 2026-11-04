@@ -2,8 +2,6 @@
 import argparse,gzip,hashlib,json,re,sys,zipfile
 from pathlib import Path
 
-STANDARD_NAMES={'README.md','LICENSE','LICENSE.txt','MODEL.md','REPORT.md','AGENTS.md','HANDOFF.md','CMakeLists.txt','Makefile','Dockerfile','SHA256SUMS','zImage'}
-
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def check_hashes(root,entries):
@@ -16,14 +14,14 @@ def verify(root):
     root=root.resolve()
     for directory in ['src','sim','build','board','data','skill','report']:
         if not (root/directory).is_dir():raise ValueError('Missing required directory: '+directory)
-    for name in ['LICENSE','README.md','skill/README.md','report/design_report.md','report/provenance.json']:
+    for name in ['license','readme.md','skill/readme.md','report/design_report.md','report/provenance.json']:
         if not (root/name).is_file():raise ValueError('Missing required file: '+name)
     names=[]
     for p in root.rglob('*'):
         parts=p.relative_to(root).parts
         if '.git' in parts or '__pycache__' in parts:continue
         for part in parts:
-            if part not in STANDARD_NAMES and not re.fullmatch(r'[a-z0-9_.-]+',part):raise ValueError('Nonconforming custom path: '+p.relative_to(root).as_posix())
+            if not re.fullmatch(r'[a-z0-9_.-]+',part):raise ValueError('Nonconforming path: '+p.relative_to(root).as_posix())
         if p.is_file():names.append(p.relative_to(root).as_posix())
     manifest=json.loads((root/'report/submission_manifest.json').read_text())
     check_hashes(root,manifest['files'])
@@ -38,7 +36,7 @@ def verify(root):
     with zipfile.ZipFile(root/'board/pl30/sys_resident.xsa') as z:
         if z.read(next(n for n in z.namelist() if n.endswith('.bit')))!=bit.read_bytes():raise ValueError('XSA and bit disagree')
     external=json.loads((root/'board/external_assets.json').read_text())
-    for line in (root/'board/pl30/SHA256SUMS').read_text().splitlines():
+    for line in (root/'board/pl30/sha256sums').read_text().splitlines():
         digest,name=line.split('  ',1)
         if name in external:
             if digest!=external[name]['sha256']:raise ValueError('External kernel identity disagrees with frozen package')

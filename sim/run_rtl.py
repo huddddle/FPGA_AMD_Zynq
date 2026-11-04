@@ -8,7 +8,7 @@ def main():
     p.add_argument('--jobs',default=2,type=int)
     a=p.parse_args();root=Path(__file__).resolve().parents[1];work=a.work_dir.resolve()
     if work==root or root in work.parents:p.error('Use a work directory outside this repository')
-    if os.name=='nt':p.error('Run in Linux/WSL with Verilator and a C++ compiler; see sim/README.md')
+    if os.name=='nt':p.error('Run in Linux/WSL with Verilator and a C++ compiler; see sim/readme.md')
     work.mkdir(parents=True,exist_ok=True)
     (work/'vectors.txt').write_bytes(gzip.decompress((root/'data/axis_vectors.txt.gz').read_bytes()))
     files=[root/'src/rtl'/n for n in json.loads((root/'src/rtl/files.json').read_text())]

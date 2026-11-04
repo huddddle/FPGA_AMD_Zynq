@@ -1,9 +1,16 @@
-# 命名与目录口径
+# 文件命名与工具兼容
 
-按用户提供的3.3提交规范整理。自定义目录/文件主体采用小写英文、数字、下划线或连字符；扩展名以及.gitignore等隐藏文件的点保留，中文只在正文与注释。
+仓库内目录和文件名使用小写英文字母、数字、下划线与连字符，扩展名分隔点及 `.gitignore`、`.gitattributes` 的前导点保留。首页采用 `readme.md`，许可证采用 `license`，交接文件采用 `handoff.md`。
 
-用户已确认工具标准名称例外：README.md、LICENSE、LICENSE.txt、AGENTS.md、HANDOFF.md、CMakeLists.txt、Makefile、SHA256SUMS、zImage；Dockerfile、MODEL.md、REPORT.md若使用也按规范原名。校验脚本只豁免这些明确名称，不豁免任意大写文件。
+原生工具名称按以下方式处理：
 
-自定义启动脚本在仓库为board/app/zynq7020.sh，部署时依映射复制为既有Linux运行入口Zynq7020.sh；它不作为本仓库自定义大写文件例外。运行产生的InferenceResult在板端，不是提交路径。
+| 仓库名称 | 使用方式 |
+| --- | --- |
+| `src/ps_software/*/native/cmakelists.txt` | PS 构建脚本在仓库外工作副本中恢复 `CMakeLists.txt`；CMake 从工作副本运行 |
+| `src/ps_software/loopback/makefile` | GNU make 支持小写 `makefile`；内核模块构建时按构建说明复制为外部工作目录的 `Makefile` |
+| `board/pl30/sha256sums` | 部署脚本在输出包中生成既有板端名称 `SHA256SUMS`，内容保持原样 |
+| `board/app/zynq7020.sh` | 部署脚本按运行环境映射为 `Zynq7020.sh` |
 
-仓库名FPGA_AMD_Zynq由用户明确指定；电脑上层中文目录不属于仓库内部命名。开发仓库不迁移不改名。原始报告正文中的旧中文路径/绝对路径保留来源含义，不代表新构建入口依赖这些位置。
+`zImage` 为外部厂商内核文件的运行名称，仓库仅保存其身份信息；部署脚本从使用者提供的路径导入。上述大写名称只在生成的工作副本或板端包中出现。
+
+GitHub 仓库地址保持现有名称。历史报告正文与归档记录中的原始路径保留，用于定位原构建和测试文件。
